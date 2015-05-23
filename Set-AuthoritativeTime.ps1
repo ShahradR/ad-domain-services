@@ -7,8 +7,6 @@ function Set-AuthoritativeTime
         $TimeServer
     )
     
-    Stop-Service w32time;
-    
     w32tm /config `
             /update `
             /manualpeerlist:"time.nrc.ca,time.chu.nrc.ca" `
@@ -19,7 +17,7 @@ function Set-AuthoritativeTime
             /rediscover `
             /nowait
     
-    Start-Service w32time;
+    Restart-Service w32time;
 }
 
 function Private:Concatenate-DomainNames
