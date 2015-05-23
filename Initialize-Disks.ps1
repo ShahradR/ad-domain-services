@@ -1,6 +1,6 @@
 ﻿$disks = Get-Disk | Where-Object {$_.NumberOfPartitions -eq 0}
     
-If (@($disks).Count > 0)
+If (@($disks).Count -gt 0)
 {
     foreach ($disk in $disks)
     {
