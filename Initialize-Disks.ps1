@@ -6,6 +6,6 @@ If (@($disks).Count -gt 0)
     {
         $disk |`
         New-Partition -AssignDriveLetter -UseMaximumSize | `
-        Format-Volume -FileSystem NTFS -Force
+        Format-Volume -FileSystem NTFS -Confirm:$false
     }
 }
